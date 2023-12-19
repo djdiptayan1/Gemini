@@ -17,32 +17,15 @@ struct ContentView: View {
     @State private var showingImagePicker = false
     @State private var inputImageData: Data = Data()
 
+    @State private var isVisionModel: Bool = false
+    @State private var modelName: String = "Gemini Pro"
+
     var body: some View {
         ZStack {
             NavigationStack {
                 VStack {
                     ScrollView {
-                        VStack(alignment: .leading, spacing: 10) {
-                            HStack {
-                                Text(SentText)
-                                    .padding(8)
-                                    .foregroundColor(.white)
-                                    .background(SentText.isEmpty ? Color.clear : Color(.blue))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-
-                            HStack {
-                                Spacer()
-                                Text(outputText)
-                                    .padding(8)
-                                    .foregroundColor(.white)
-                                    .background(outputText.isEmpty ? Color.clear : Color(.green))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                            }
-                        }
-                        .padding()
+                        DisplayOutput(SentText: $SentText, outputText: $outputText)
                     }
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
@@ -51,9 +34,9 @@ struct ContentView: View {
                     Spacer()
 
                     UserInput(inputText: $inputText, outputText: $outputText, SentText: $SentText, showingImagePicker: $showingImagePicker, inputImageData: $inputImageData)
-                }
-                .navigationTitle("Gemini Pro")
+                }.navigationTitle("Gemini Pro")
                 .navigationBarTitleDisplayMode(.inline)
+                .foregroundStyle(Color(.label))
             }
         }
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
@@ -73,3 +56,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
