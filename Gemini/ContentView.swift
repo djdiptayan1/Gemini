@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @State private var inputText: String = ""
@@ -18,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            NavigationStack{
+            NavigationStack {
                 VStack {
                     ScrollView {
                         VStack(alignment: .leading, spacing: 10) {
@@ -46,19 +47,21 @@ struct ContentView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
                     .padding(5)
-                    
+
                     Spacer()
-                    
 
                     UserInput(inputText: $inputText, outputText: $outputText, SentText: $SentText, showingImagePicker: $showingImagePicker, inputImageData: $inputImageData)
                 }
                 .navigationTitle("Gemini Pro")
                 .navigationBarTitleDisplayMode(.inline)
             }
-            
         }
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
             ImagePicker(image: self.$inputImageData)
+        }
+        .onTapGesture {
+            // Dismiss keyboard
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
 
