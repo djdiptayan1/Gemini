@@ -13,7 +13,7 @@ struct SendButton: View {
     @Binding var inputText: String
     @Binding var outputText: String
     @Binding var SentText: String
-    
+
     let generator = UIImpactFeedbackGenerator(style: .heavy)
 
     var body: some View {
@@ -29,6 +29,16 @@ struct SendButton: View {
                         outputText = try await geminiAPI.generateContent(inputText: inputfeed)
                     } catch {
                         print("Failed to generate content: \(error)")
+
+                        if case let GoogleGenerativeAI.GenerateContentError.responseStoppedEarly(_, response) = error {
+                            if let candidate = response.candidates.first,
+                               let content = candidate.content.parts.first(where: { $0.text != nil }) {
+                                outputText = content.text!
+                                print(outputText)
+                            }
+                        } else {
+                            outputText = "Content blocked for safety reasons."
+                        }
                     }
                 }
                 outputText = ""
