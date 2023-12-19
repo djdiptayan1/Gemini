@@ -27,6 +27,8 @@ struct SendButton: View {
                         inputText = ""
                         let geminiAPI = GeminiAPI()
                         outputText = try await geminiAPI.generateContent(inputText: inputfeed)
+                        
+                        generator.impactOccurred()
                     } catch {
                         print("Failed to generate content: \(error)")
 
