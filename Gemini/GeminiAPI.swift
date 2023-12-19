@@ -10,8 +10,7 @@ import GoogleGenerativeAI
 import SwiftUI
 
 struct GeminiAPI {
-    
-    
+
     let model = GenerativeModel(name: "gemini-pro", apiKey: "AIzaSyDDVko0UXgILxuH7ddXv988tpWtZ8Rvixs")
     
     func generateContent(inputText: String) async throws -> String {
