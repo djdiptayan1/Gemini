@@ -60,7 +60,6 @@ struct ContentView: View {
             ImagePicker(image: self.$inputImageData)
         }
         .onTapGesture {
-            // Dismiss keyboard
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
