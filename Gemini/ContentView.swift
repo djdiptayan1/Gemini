@@ -28,8 +28,8 @@ struct ContentView: View {
                 VStack {
                     ScrollView {
 //                        DisplayOutput(SentText: $SentText, outputText: $outputText)
-                        DisplayOutput(messages: $messages)
-                            .frame(minWidth: 385)
+                       DisplayOutput(messages: $messages)
+                        .frame(minWidth: 385)
                     }
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
@@ -38,6 +38,7 @@ struct ContentView: View {
                     Spacer()
 
                     UserInput(inputText: $inputText, outputText: $outputText, SentText: $SentText, modelName: modelName, showingImagePicker: $showingImagePicker, inputImageData: $inputImageData, messages: $messages)
+                        .id("InputText")
 
                 }.navigationTitle("Gemini Pro")
                     .navigationBarTitleDisplayMode(.inline)
