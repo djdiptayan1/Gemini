@@ -13,7 +13,7 @@
 //    @State var modelName: String
 //
 //    var model: GenerativeModel {
-//        GenerativeModel(name: modelName, apiKey: "AIzaSyDDVko0UXgILxuH7ddXv988tpWtZ8Rvixs")
+//        GenerativeModel(name: modelName, apiKey: APIKey.default)
 //    }
 //
 //    func generateContent(inputText: String) async throws -> String {
@@ -42,7 +42,7 @@ struct GeminiAPI {
     var chat: Chat?
 
     init(modelName: String, generationConfig: GenerationConfig) {
-        self.model = GenerativeModel(name: modelName, apiKey: "AIzaSyDDVko0UXgILxuH7ddXv988tpWtZ8Rvixs", generationConfig: generationConfig)
+        self.model = GenerativeModel(name: modelName, apiKey: APIKey.default, generationConfig: generationConfig)
     }
 
     mutating func startChat(history: [ModelContent]) {
