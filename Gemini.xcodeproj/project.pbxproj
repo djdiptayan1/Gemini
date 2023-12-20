@@ -10,6 +10,7 @@
 		9D408A602B323C7900D75D62 /* DisplayOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D408A5F2B323C7900D75D62 /* DisplayOutput.swift */; };
 		9D6474772B32150E007C9576 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6474762B32150E007C9576 /* UserInput.swift */; };
 		9DC9C69A2B32D43F0007DE2E /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DEE63F42B31FD20006D1B04 /* GenerativeAI-Info.plist */; };
+		9DC9C69E2B32FDF90007DE2E /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9C69D2B32FDF90007DE2E /* OptionsView.swift */; };
 		9DEE63BD2B31EFB9006D1B04 /* GeminiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE63BC2B31EFB9006D1B04 /* GeminiApp.swift */; };
 		9DEE63BF2B31EFB9006D1B04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE63BE2B31EFB9006D1B04 /* ContentView.swift */; };
 		9DEE63C12B31EFBA006D1B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DEE63C02B31EFBA006D1B04 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		9D408A5F2B323C7900D75D62 /* DisplayOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayOutput.swift; sourceTree = "<group>"; };
 		9D6474762B32150E007C9576 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
+		9DC9C69D2B32FDF90007DE2E /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		9DEE63B92B31EFB9006D1B04 /* Gemini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gemini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DEE63BC2B31EFB9006D1B04 /* GeminiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiApp.swift; sourceTree = "<group>"; };
 		9DEE63BE2B31EFB9006D1B04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				9D408A5F2B323C7900D75D62 /* DisplayOutput.swift */,
 				9D6474762B32150E007C9576 /* UserInput.swift */,
 				9DEE63EA2B31F37F006D1B04 /* SendButton.swift */,
+				9DC9C69D2B32FDF90007DE2E /* OptionsView.swift */,
 				9DEE63E82B31F235006D1B04 /* GeminiAPI.swift */,
 				9DEE63E62B31F039006D1B04 /* ImagePicker.swift */,
 				9DEE63C02B31EFBA006D1B04 /* Assets.xcassets */,
@@ -301,6 +304,7 @@
 				9DEE63E72B31F039006D1B04 /* ImagePicker.swift in Sources */,
 				9DEE63BF2B31EFB9006D1B04 /* ContentView.swift in Sources */,
 				9DEE63EB2B31F37F006D1B04 /* SendButton.swift in Sources */,
+				9DC9C69E2B32FDF90007DE2E /* OptionsView.swift in Sources */,
 				9DEE63E92B31F235006D1B04 /* GeminiAPI.swift in Sources */,
 				9DEE63F32B31FD1E006D1B04 /* APIKey.swift in Sources */,
 				9D408A602B323C7900D75D62 /* DisplayOutput.swift in Sources */,
@@ -472,13 +476,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gemini/Preview Content\"";
 				DEVELOPMENT_TEAM = G2TY2Q3KD8;
-				ENABLE_PREVIEWS = YES;
+				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need Access";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need access to photos app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,10 +512,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need Access";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need access to photos app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
