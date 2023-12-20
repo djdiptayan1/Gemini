@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D408A602B323C7900D75D62 /* DisplayOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D408A5F2B323C7900D75D62 /* DisplayOutput.swift */; };
 		9D6474772B32150E007C9576 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6474762B32150E007C9576 /* UserInput.swift */; };
+		9DC9C69A2B32D43F0007DE2E /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DEE63F42B31FD20006D1B04 /* GenerativeAI-Info.plist */; };
 		9DEE63BD2B31EFB9006D1B04 /* GeminiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE63BC2B31EFB9006D1B04 /* GeminiApp.swift */; };
 		9DEE63BF2B31EFB9006D1B04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEE63BE2B31EFB9006D1B04 /* ContentView.swift */; };
 		9DEE63C12B31EFBA006D1B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DEE63C02B31EFBA006D1B04 /* Assets.xcassets */; };
@@ -57,7 +58,7 @@
 		9DEE63E82B31F235006D1B04 /* GeminiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiAPI.swift; sourceTree = "<group>"; };
 		9DEE63EA2B31F37F006D1B04 /* SendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
 		9DEE63F22B31FD1E006D1B04 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		9DEE63F42B31FD20006D1B04 /* GenerativeAI-Info-Sample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info-Sample.plist"; sourceTree = "<group>"; };
+		9DEE63F42B31FD20006D1B04 /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				9DEE63F22B31FD1E006D1B04 /* APIKey.swift */,
-				9DEE63F42B31FD20006D1B04 /* GenerativeAI-Info-Sample.plist */,
+				9DEE63F42B31FD20006D1B04 /* GenerativeAI-Info.plist */,
 			);
 			path = API_Key;
 			sourceTree = "<group>";
@@ -270,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC9C69A2B32D43F0007DE2E /* GenerativeAI-Info.plist in Resources */,
 				9DEE63C42B31EFBA006D1B04 /* Preview Assets.xcassets in Resources */,
 				9DEE63C12B31EFBA006D1B04 /* Assets.xcassets in Resources */,
 			);
