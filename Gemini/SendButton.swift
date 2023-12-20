@@ -53,10 +53,12 @@ struct SendButton: View {
                             if let candidate = response.candidates.first,
                                let content = candidate.content.parts.first(where: { $0.text != nil }) {
                                 outputText = content.text!
+                                messages.append(Message(text: outputText, isSent: false))
                                 print(outputText)
                             }
                         } else {
                             outputText = "Content blocked for safety reasons."
+                            messages.append(Message(text: outputText, isSent: false))
                         }
                     }
                 }
