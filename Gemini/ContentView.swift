@@ -18,25 +18,30 @@ struct ContentView: View {
     @State private var inputImageData: Data = Data()
 
     @State private var isVisionModel: Bool = false
-    @State private var modelName: String = "Gemini Pro"
+    @State private var modelName: String = "gemini-pro" // "gemini-pro" and "gemini-pro"
+
+    @State var messages: [Message] = []
 
     var body: some View {
         ZStack {
             NavigationStack {
                 VStack {
                     ScrollView {
-                        DisplayOutput(SentText: $SentText, outputText: $outputText)
+//                        DisplayOutput(SentText: $SentText, outputText: $outputText)
+                        DisplayOutput(messages: $messages)
+                            .frame(minWidth: 385)
                     }
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
-                    .padding(5)
+                    .padding(2)
 
                     Spacer()
 
-                    UserInput(inputText: $inputText, outputText: $outputText, SentText: $SentText, showingImagePicker: $showingImagePicker, inputImageData: $inputImageData)
+                    UserInput(inputText: $inputText, outputText: $outputText, SentText: $SentText, modelName: modelName, showingImagePicker: $showingImagePicker, inputImageData: $inputImageData, messages: $messages)
+
                 }.navigationTitle("Gemini Pro")
-                .navigationBarTitleDisplayMode(.inline)
-                .foregroundStyle(Color(.label))
+                    .navigationBarTitleDisplayMode(.inline)
+                    .foregroundStyle(Color(.label))
             }
         }
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
@@ -56,4 +61,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-
