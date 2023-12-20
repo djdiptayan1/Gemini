@@ -13,7 +13,18 @@ struct SendButton: View {
     @Binding var inputText: String
     @Binding var outputText: String
     @Binding var SentText: String
+    @State var modelName: String
+    
+    @Binding var messages: [Message]
 
+    let generationConfig = GenerationConfig(maxOutputTokens: 35000) //for chating only
+    // Define the chat history
+    let history = [
+        ModelContent(role: "user", parts: "Hello, I am Diptayan. I am a CSE undergrad at SRM Institute of science and Technology. I love coding, playing video games. My portfolio website is- https://djdiptayan.in/"),
+        ModelContent(role: "model", parts: "Great to meet you. What would you like to know?")
+    ]
+
+    
     let generator = UIImpactFeedbackGenerator(style: .heavy)
 
     var body: some View {
@@ -22,11 +33,17 @@ struct SendButton: View {
             if !inputText.trimmingCharacters(in: .whitespaces).isEmpty {
                 Task {
                     do {
+                        messages.append(Message(text: inputText, isSent: true))
                         SentText = inputText
                         let inputfeed = inputText
                         inputText = ""
-                        let geminiAPI = GeminiAPI()
-                        outputText = try await geminiAPI.generateContent(inputText: inputfeed)
+//                        let geminiAPI = GeminiAPI(modelName: modelName) //normal
+                        var geminiAPI = GeminiAPI(modelName: modelName, generationConfig: generationConfig) //multi chat
+                        geminiAPI.startChat(history: history) // Initialize the chat
+//                        outputText = try await geminiAPI.generateContent(inputText: inputfeed) //normal
+                        outputText = try await geminiAPI.sendMessage(inputfeed) //multi chat
+                        
+                        messages.append(Message(text: outputText, isSent: false))
                         
                         generator.impactOccurred()
                     } catch {
