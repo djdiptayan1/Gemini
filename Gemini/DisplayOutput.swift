@@ -37,7 +37,7 @@ import SwiftUI
 //    }
 // }
 
-struct Message: Identifiable {
+struct Message: Identifiable, Equatable {
     let id = UUID()
     let text: String
     let isSent: Bool
@@ -74,4 +74,3 @@ struct DisplayOutput: View {
         }
     }
 }
-
