@@ -11,10 +11,12 @@ struct UserInput: View {
     @Binding var inputText: String
     @Binding var outputText: String
     @Binding var SentText: String
+    @State var modelName: String
     @Binding var showingImagePicker: Bool
     @Binding var inputImageData: Data
-    
 
+    @Binding var messages: [Message]
+    
     var body: some View {
         HStack {
             TextField("Enter prompt", text: $inputText)
@@ -31,7 +33,7 @@ struct UserInput: View {
                     .scaledToFit()
                     .frame(width: 30, height: 30)
             }
-            SendButton(inputText: $inputText, outputText: $outputText, SentText: $SentText)
+            SendButton(inputText: $inputText, outputText: $outputText, SentText: $SentText, modelName: modelName, messages: $messages)
         }
         .padding(EdgeInsets(top: 10, leading: 0, bottom: 8, trailing: 10))
     }
