@@ -16,7 +16,7 @@ struct UserInput: View {
     @Binding var inputImageData: Data
 
     @Binding var messages: [Message]
-    
+
     var body: some View {
         HStack {
             TextField("Enter prompt", text: $inputText)
