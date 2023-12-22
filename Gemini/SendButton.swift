@@ -20,7 +20,7 @@ struct SendButton: View {
     let generationConfig = GenerationConfig(maxOutputTokens: 35000) // for chating only
     // Define the chat history
     let history = [
-        ModelContent(role: "user", parts: "Hello, I am Diptayan. I am a CSE undergrad at SRM Institute of science and Technology. I love coding, playing video games. My portfolio website is- https://djdiptayan.in/"),
+        ModelContent(role: "user", parts: "Hello, I am Diptayan. I am a CSE undergrad at SRM Institute of science and Technology. I love coding, playing video games. My portfolio website is- https://djdiptayan.in/. Your name is Gemini. "),
         ModelContent(role: "model", parts: "Great to meet you. What would you like to know?"),
     ]
 
